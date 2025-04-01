@@ -77,12 +77,16 @@ body {
 .container {
     text-align: center;
     z-index: 1; /* Above background */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 
 /* Text Wrapper (for Harmony and Arrows) */
 .text-wrapper {
-    position: absolute;
-    top: 2%; /* Higher position as requested */
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
@@ -119,7 +123,7 @@ body {
 
 /* Top Arrow (---->) */
 .top-arrow {
-    animation: slideRight 3s infinite ease-in-out;
+    animation: slideRight 4s infinite linear; /* Smooth linear sliding */
 }
 
     .top-arrow::before {
@@ -129,14 +133,14 @@ body {
         top: -3px;
         width: 0;
         height: 0;
-        border-left: 8px solid #ff66ff;
+        border-left: 8px solid #ff66ff; /* Arrowhead pointing right */
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
     }
 
 /* Bottom Arrow (<----) */
 .bottom-arrow {
-    animation: slideLeft 3s infinite ease-in-out;
+    animation: slideLeft 4s infinite linear; /* Smooth linear sliding */
 }
 
     .bottom-arrow::before {
@@ -146,37 +150,37 @@ body {
         top: -3px;
         width: 0;
         height: 0;
-        border-right: 8px solid #ff66ff;
+        border-right: 8px solid #ff66ff; /* Arrowhead pointing left */
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
     }
 
-/* Slide Animations */
+/* Slide Animations (Linear for Smoothness) */
 @keyframes slideRight {
     0% {
-        transform: translateX(-10px);
+        transform: translateX(-15px);
     }
 
     50% {
-        transform: translateX(10px);
+        transform: translateX(15px);
     }
 
     100% {
-        transform: translateX(-10px);
+        transform: translateX(-15px);
     }
 }
 
 @keyframes slideLeft {
     0% {
-        transform: translateX(10px);
+        transform: translateX(15px);
     }
 
     50% {
-        transform: translateX(-10px);
+        transform: translateX(-15px);
     }
 
     100% {
-        transform: translateX(10px);
+        transform: translateX(15px);
     }
 }
 
