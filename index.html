@@ -15,9 +15,9 @@
     </div>
     <div class="container">
         <div class="text-wrapper">
-            <span class="arrow top-arrow">----></span> <!-- Line arrow above -->
+            <div class="arrow top-arrow"></div> <!-- Custom line arrow above -->
             <h1 class="glow-text">Harmony</h1>
-            <span class="arrow bottom-arrow"><----</span> <!-- Line arrow below -->
+            <div class="arrow bottom-arrow"></div> <!-- Custom line arrow below -->
         </div>
         <div class="button-container">
             <a href="https://example.com/download" class="btn pulse" onmouseover="hideLink(event)" onmouseout="showLink()">Download</a>
@@ -45,15 +45,6 @@
                 if (href) btn.href = href; // Restore link
             });
         }
-
-        // Arrow flip animation (swap content)
-        const topArrow = document.querySelector('.top-arrow');
-        const bottomArrow = document.querySelector('.bottom-arrow');
-        setInterval(() => {
-            const temp = topArrow.textContent;
-            topArrow.textContent = bottomArrow.textContent;
-            bottomArrow.textContent = temp;
-        }, 3000); // Swap every 3 seconds to match animation cycle
     </script>
 </body>
 </html>
