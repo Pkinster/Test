@@ -45,6 +45,15 @@
                 if (href) btn.href = href; // Restore link
             });
         }
+
+        // Arrow flip animation (swap content)
+        const topArrow = document.querySelector('.top-arrow');
+        const bottomArrow = document.querySelector('.bottom-arrow');
+        setInterval(() => {
+            const temp = topArrow.textContent;
+            topArrow.textContent = bottomArrow.textContent;
+            bottomArrow.textContent = temp;
+        }, 3000); // Swap every 3 seconds to match animation cycle
     </script>
 </body>
 </html>
