@@ -1,0 +1,39 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d0d0d;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.glow-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 10rem;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+    animation: fadeGlow 2s infinite ease-in-out;
+}
+
+@keyframes fadeGlow {
+    0% {
+        opacity: 0.4;
+        text-shadow: 0 0 5px #00ff00;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 80px #00ff00;
+    }
+
+    100% {
+        opacity: 0.4;
+        text-shadow: 0 0 5px #00ff00;
+    }
+}
