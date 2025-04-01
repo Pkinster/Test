@@ -9,16 +9,19 @@
 </head>
 <body oncontextmenu="return false;">
     <!-- Disable right-click -->
-    <div class="background"></div> <!-- Animated background -->
+    <div class="background">
+        <div class="layer1"></div> <!-- First layer of background -->
+        <div class="layer2"></div> <!-- Second layer of background -->
+    </div>
     <div class="container">
         <div class="text-wrapper">
-            <span class="arrow top-arrow">→</span> <!-- Arrow above -->
+            <span class="arrow top-arrow">----></span> <!-- Line arrow above -->
             <h1 class="glow-text">Harmony</h1>
-            <span class="arrow bottom-arrow">←</span> <!-- Arrow below -->
+            <span class="arrow bottom-arrow"><----</span> <!-- Line arrow below -->
         </div>
         <div class="button-container">
-            <a href="https://example.com/download" class="btn pulse">Download</a>
-            <a href="https://discord.gg/your-discord-invite" class="btn pulse">Discord</a>
+            <a href="https://example.com/download" class="btn pulse" onmouseover="hideLink(event)" onmouseout="showLink()">Download</a>
+            <a href="https://discord.gg/your-discord-invite" class="btn pulse" onmouseover="hideLink(event)" onmouseout="showLink()">Discord</a>
         </div>
     </div>
     <script>
@@ -26,6 +29,22 @@
         window.addEventListener('scroll', () => {
             document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
         }, false);
+
+        // Prevent link from showing in status bar on hover
+        function hideLink(event) {
+            event.preventDefault();
+            window.status = ''; // Clear status bar
+            event.target.setAttribute('data-href', event.target.href); // Store href
+            event.target.href = 'javascript:void(0)'; // Disable link temporarily
+        }
+
+        function showLink() {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                const href = btn.getAttribute('data-href');
+                if (href) btn.href = href; // Restore link
+            });
+        }
     </script>
 </body>
 </html>
