@@ -48,6 +48,16 @@ body {
     z-index: 1; /* Above background */
 }
 
+/* Text Wrapper (for Harmony and Arrows) */
+.text-wrapper {
+    position: absolute;
+    top: 10%; /* Moved higher (closer to top) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Space between arrows and text */
+}
+
 /* Glowing Text (Harmony) */
 .glow-text {
     font-family: 'Montserrat', sans-serif;
@@ -60,17 +70,13 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    position: absolute;
-    top: 20%; /* Positioned higher like in screenshot */
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* Space between arrows and text */
 }
 
-/* Arrows */
+/* Arrows (Above and Below) */
 .arrow {
     font-size: 2rem;
-    color: #ff66ff;
+    color: #ff66ff; /* Same purple as text */
+    text-shadow: 0 0 10px #ff66ff;
 }
 
 /* Fade Animation */
